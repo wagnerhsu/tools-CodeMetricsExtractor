@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ArchiMetrics.Analysis.Common.Metrics;
 
+
 namespace MetricsExtractor.Custom
 {
     public class TypeMetricWithNamespace : ITypeMetric

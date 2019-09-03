@@ -73,7 +73,7 @@ namespace MetricsExtractor
                 .Distinct()
                 .ToArray();
 
-            const int MAX_LINES_OF_CODE_ON_METHOD = 30;
+            const int MAX_LINES_OF_CODE_ON_METHOD = 5;
 
             var metodos = types.SelectMany(x => x.MemberMetrics, (type, member) => new MetodoComTipo { Tipo = type, Metodo = member }).ToList();
 
@@ -174,6 +174,7 @@ namespace MetricsExtractor
 
             var projects = solution.Projects.Where(p => !configuration.IgnoredProjects.Contains(p.Name)).ToList();
 
+            WriteLine($"{projects.Count} projects");
             WriteLine("Loading metrics, wait it may take a while.");
 
             var metrics = new List<IEnumerable<INamespaceMetric>>();
